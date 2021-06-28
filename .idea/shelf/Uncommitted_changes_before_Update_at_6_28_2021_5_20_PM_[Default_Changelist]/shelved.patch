@@ -1,0 +1,2940 @@
+Index: ../AdditionalCourse/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/.gitignore	(date 1621430049787)
++++ ../AdditionalCourse/.gitignore	(date 1621430049787)
+@@ -0,0 +1,15 @@
++*.iml
++.gradle
++/local.properties
++/.idea/caches
++/.idea/libraries
++/.idea/modules.xml
++/.idea/workspace.xml
++/.idea/navEditor.xml
++/.idea/assetWizardSettings.xml
++.DS_Store
++/build
++/captures
++.externalNativeBuild
++.cxx
++local.properties
+Index: ../AdditionalCourse/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/build.gradle	(date 1621430050828)
++++ ../AdditionalCourse/build.gradle	(date 1621430050828)
+@@ -0,0 +1,24 @@
++// Top-level build file where you can add configuration options common to all sub-projects/modules.
++buildscript {
++    repositories {
++        google()
++        jcenter()
++    }
++    dependencies {
++        classpath "com.android.tools.build:gradle:4.1.2"
++
++        // NOTE: Do not place your application dependencies here; they belong
++        // in the individual module build.gradle files
++    }
++}
++
++allprojects {
++    repositories {
++        google()
++        jcenter()
++    }
++}
++
++task clean(type: Delete) {
++    delete rootProject.buildDir
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- ../AdditionalCourse/gradle.properties	(date 1621430050878)
++++ ../AdditionalCourse/gradle.properties	(date 1621430050878)
+@@ -0,0 +1,19 @@
++# Project-wide Gradle settings.
++# IDE (e.g. Android Studio) users:
++# Gradle settings configured through the IDE *will override*
++# any settings specified in this file.
++# For more details on how to configure your build environment visit
++# http://www.gradle.org/docs/current/userguide/build_environment.html
++# Specifies the JVM arguments used for the daemon process.
++# The setting is particularly useful for tweaking memory settings.
++org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
++# When configured, Gradle will run in incubating parallel mode.
++# This option should only be used with decoupled projects. More details, visit
++# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
++# org.gradle.parallel=true
++# AndroidX package structure to make it clearer which packages are bundled with the
++# Android operating system, and which are packaged with your app"s APK
++# https://developer.android.com/topic/libraries/support-library/androidx-rn
++android.useAndroidX=true
++# Automatically convert third-party libraries to use AndroidX
++android.enableJetifier=true
+\ No newline at end of file
+Index: ../AdditionalCourse/settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/settings.gradle	(date 1621430053894)
++++ ../AdditionalCourse/settings.gradle	(date 1621430053894)
+@@ -0,0 +1,2 @@
++include ':app'
++rootProject.name = "AdditionalCourse"
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_board.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_board.xml	(date 1624542562126)
++++ app/src/main/res/layout/fragment_board.xml	(date 1624542562126)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".ui.onboard.BoardFragment">
++
++   <androidx.viewpager2.widget.ViewPager2
++       android:id="@+id/viewPager"
++       android:layout_width="match_parent"
++       android:layout_height="match_parent"/>
++
++</FrameLayout>
+\ No newline at end of file
+Index: ../TaskApp31/app/src/main/res/values-night/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/res/values-night/colors.xml	(date 1621275291589)
++++ ../TaskApp31/app/src/main/res/values-night/colors.xml	(date 1621275291589)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="color_light">#FAE6C5</color>
++</resources>
+\ No newline at end of file
+Index: app/src/main/java/kg/geektech/todoapp32/ui/onboard/BoardAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kg/geektech/todoapp32/ui/onboard/BoardAdapter.java	(date 1624542855247)
++++ app/src/main/java/kg/geektech/todoapp32/ui/onboard/BoardAdapter.java	(date 1624542855247)
+@@ -0,0 +1,31 @@
++package kg.geektech.todoapp32.ui.onboard;
++
++import android.view.View;
++import android.view.ViewGroup;
++
++import androidx.annotation.NonNull;
++import androidx.recyclerview.widget.RecyclerView;
++
++public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> {
++    @NonNull
++    @Override
++    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++        return null;
++    }
++
++    @Override
++    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
++
++    }
++
++    @Override
++    public int getItemCount() {
++        return 0;
++    }
++
++    public class ViewHolder extends RecyclerView.ViewHolder {
++        public ViewHolder(@NonNull View itemView) {
++            super(itemView);
++        }
++    }
++}
+Index: ../AdditionalCourse/app/src/main/res/layout/fragment_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/layout/fragment_home.xml	(date 1621435482410)
++++ ../AdditionalCourse/app/src/main/res/layout/fragment_home.xml	(date 1621435482410)
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".ui.home.HomeFragment">
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/rv"
++        tools:listitem="@layout/item_rv"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
++
++    <com.google.android.material.floatingactionbutton.FloatingActionButton
++        android:id="@+id/fab"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_margin="20dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent" />
++
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeModel.java	(date 1621436355096)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeModel.java	(date 1621436355096)
+@@ -0,0 +1,27 @@
++package kg.geektech.additionalcourse.ui.home;
++
++public class HomeModel {
++
++    private String title, desc;
++
++    public String getTitle() {
++        return title;
++    }
++
++    public void setTitle(String title) {
++        this.title = title;
++    }
++
++    public String getDesc() {
++        return desc;
++    }
++
++    public void setDesc(String desc) {
++        this.desc = desc;
++    }
++
++    public HomeModel(String title, String desc) {
++        this.title = title;
++        this.desc = desc;
++    }
++}
+Index: app/src/main/java/kg/geektech/todoapp32/ui/onboard/BoardFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kg/geektech/todoapp32/ui/onboard/BoardFragment.java	(date 1624542914469)
++++ app/src/main/java/kg/geektech/todoapp32/ui/onboard/BoardFragment.java	(date 1624542914469)
+@@ -0,0 +1,34 @@
++package kg.geektech.todoapp32.ui.onboard;
++
++import android.os.Bundle;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.viewpager2.widget.ViewPager2;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++import kg.geektech.todoapp32.R;
++
++public class BoardFragment extends Fragment {
++
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        return inflater.inflate(R.layout.fragment_board, container, false);
++    }
++
++    @Override
++    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
++        super.onViewCreated(view, savedInstanceState);
++        ViewPager2 viewPager = view.findViewById(R.id.viewPager);
++        BoardAdapter adapter = new BoardAdapter();
++        viewPager.setAdapter(adapter);
++
++
++    }
++}
+\ No newline at end of file
+Index: ../TaskApp31-master/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31-master/.idea/vcs.xml	(date 1622700127832)
++++ ../TaskApp31-master/.idea/vcs.xml	(date 1622700127832)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(date 1624272254785)
++++ .idea/misc.xml	(date 1624272254785)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeViewModel.java	(date 1621430056130)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeViewModel.java	(date 1621430056130)
+@@ -0,0 +1,19 @@
++package kg.geektech.additionalcourse.ui.home;
++
++import androidx.lifecycle.LiveData;
++import androidx.lifecycle.MutableLiveData;
++import androidx.lifecycle.ViewModel;
++
++public class HomeViewModel extends ViewModel {
++
++    private MutableLiveData<String> mText;
++
++    public HomeViewModel() {
++        mText = new MutableLiveData<>();
++        mText.setValue("This is home fragment");
++    }
++
++    public LiveData<String> getText() {
++        return mText;
++    }
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeFragment.java	(date 1621437789216)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/HomeFragment.java	(date 1621437789216)
+@@ -0,0 +1,60 @@
++package kg.geektech.additionalcourse.ui.home;
++
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.HorizontalScrollView;
++import android.widget.TextView;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.lifecycle.Observer;
++import androidx.lifecycle.ViewModelProvider;
++import androidx.navigation.NavController;
++import androidx.navigation.fragment.NavHostFragment;
++
++import kg.geektech.additionalcourse.R;
++import kg.geektech.additionalcourse.databinding.FragmentHomeBinding;
++import kg.geektech.additionalcourse.ui.home.home_adapter.HomeAdapter;
++
++public class HomeFragment extends Fragment {
++
++    private FragmentHomeBinding binding;
++    private NavController navController;
++    private HomeAdapter adapter;
++
++    @Override
++    public void onCreate(@Nullable Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        adapter = new HomeAdapter();
++    }
++
++    public View onCreateView(@NonNull LayoutInflater inflater,
++                             ViewGroup container, Bundle savedInstanceState) {
++           binding = FragmentHomeBinding.inflate(inflater, container, false);
++
++           navController = NavHostFragment.findNavController(this);
++
++           binding.fab.setOnClickListener(v -> {
++
++           navController.navigate(R.id.action_navigation_home_to_formFragment);
++           });
++
++           adapter.addElem(new HomeModel("sdkjasldjalsd", "daksjdnka"));
++           adapter.addElem(new HomeModel("sdkjasldjalsd", "daksjdnka"));
++           adapter.addElem(new HomeModel("sdkjasldjalsd", "daksjdnka"));
++           adapter.addElem(new HomeModel("sdkjasldjalsd", "daksjdnka"));
++           adapter.addElem(new HomeModel("jisdjisj", "daksjdnka"));
++           adapter.addElem(new HomeModel("sdkjasldjalsd", "daksjdnka"));
++           adapter.addElem(new HomeModel("sdkjasldjalsd", "daksjdnka"));
++           adapter.addElem(new HomeModel("15165165", "daksjdnka"));
++           adapter.addElem(new HomeModel("sdkjasldjalsd", "daksjdnka"));
++
++           binding.rv.setAdapter(adapter);
++           return binding.getRoot();
++
++
++    }
++}
+\ No newline at end of file
+Index: ../TaskApp31-master/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31-master/.idea/modules.xml	(date 1622700127876)
++++ ../TaskApp31-master/.idea/modules.xml	(date 1622700127876)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/TaskApp31-master.iml" filepath="$PROJECT_DIR$/.idea/TaskApp31-master.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/gradlew
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/gradlew	(date 1621430050043)
++++ ../AdditionalCourse/gradlew	(date 1621430050043)
+@@ -0,0 +1,172 @@
++#!/usr/bin/env sh
++
++##############################################################################
++##
++##  Gradle start up script for UN*X
++##
++##############################################################################
++
++# Attempt to set APP_HOME
++# Resolve links: $0 may be a link
++PRG="$0"
++# Need this for relative symlinks.
++while [ -h "$PRG" ] ; do
++    ls=`ls -ld "$PRG"`
++    link=`expr "$ls" : '.*-> \(.*\)$'`
++    if expr "$link" : '/.*' > /dev/null; then
++        PRG="$link"
++    else
++        PRG=`dirname "$PRG"`"/$link"
++    fi
++done
++SAVED="`pwd`"
++cd "`dirname \"$PRG\"`/" >/dev/null
++APP_HOME="`pwd -P`"
++cd "$SAVED" >/dev/null
++
++APP_NAME="Gradle"
++APP_BASE_NAME=`basename "$0"`
++
++# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++DEFAULT_JVM_OPTS=""
++
++# Use the maximum available, or set MAX_FD != -1 to use that value.
++MAX_FD="maximum"
++
++warn () {
++    echo "$*"
++}
++
++die () {
++    echo
++    echo "$*"
++    echo
++    exit 1
++}
++
++# OS specific support (must be 'true' or 'false').
++cygwin=false
++msys=false
++darwin=false
++nonstop=false
++case "`uname`" in
++  CYGWIN* )
++    cygwin=true
++    ;;
++  Darwin* )
++    darwin=true
++    ;;
++  MINGW* )
++    msys=true
++    ;;
++  NONSTOP* )
++    nonstop=true
++    ;;
++esac
++
++CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
++
++# Determine the Java command to use to start the JVM.
++if [ -n "$JAVA_HOME" ] ; then
++    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
++        # IBM's JDK on AIX uses strange locations for the executables
++        JAVACMD="$JAVA_HOME/jre/sh/java"
++    else
++        JAVACMD="$JAVA_HOME/bin/java"
++    fi
++    if [ ! -x "$JAVACMD" ] ; then
++        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++    fi
++else
++    JAVACMD="java"
++    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++fi
++
++# Increase the maximum file descriptors if we can.
++if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
++    MAX_FD_LIMIT=`ulimit -H -n`
++    if [ $? -eq 0 ] ; then
++        if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
++            MAX_FD="$MAX_FD_LIMIT"
++        fi
++        ulimit -n $MAX_FD
++        if [ $? -ne 0 ] ; then
++            warn "Could not set maximum file descriptor limit: $MAX_FD"
++        fi
++    else
++        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
++    fi
++fi
++
++# For Darwin, add options to specify how the application appears in the dock
++if $darwin; then
++    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
++fi
++
++# For Cygwin, switch paths to Windows format before running java
++if $cygwin ; then
++    APP_HOME=`cygpath --path --mixed "$APP_HOME"`
++    CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
++    JAVACMD=`cygpath --unix "$JAVACMD"`
++
++    # We build the pattern for arguments to be converted via cygpath
++    ROOTDIRSRAW=`find -L / -maxdepth 1 -mindepth 1 -type d 2>/dev/null`
++    SEP=""
++    for dir in $ROOTDIRSRAW ; do
++        ROOTDIRS="$ROOTDIRS$SEP$dir"
++        SEP="|"
++    done
++    OURCYGPATTERN="(^($ROOTDIRS))"
++    # Add a user-defined pattern to the cygpath arguments
++    if [ "$GRADLE_CYGPATTERN" != "" ] ; then
++        OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
++    fi
++    # Now convert the arguments - kludge to limit ourselves to /bin/sh
++    i=0
++    for arg in "$@" ; do
++        CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
++        CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
++
++        if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
++            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
++        else
++            eval `echo args$i`="\"$arg\""
++        fi
++        i=$((i+1))
++    done
++    case $i in
++        (0) set -- ;;
++        (1) set -- "$args0" ;;
++        (2) set -- "$args0" "$args1" ;;
++        (3) set -- "$args0" "$args1" "$args2" ;;
++        (4) set -- "$args0" "$args1" "$args2" "$args3" ;;
++        (5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
++        (6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
++        (7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
++        (8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
++        (9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
++    esac
++fi
++
++# Escape application args
++save () {
++    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
++    echo " "
++}
++APP_ARGS=$(save "$@")
++
++# Collect all arguments for the java command, following the shell quoting and substitution rules
++eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
++
++# by default we should be in the correct project dir, but when run from Finder on Mac, the cwd is wrong
++if [ "$(uname)" = "Darwin" ] && [ "$HOME" = "$PWD" ]; then
++  cd "$(dirname "$0")"
++fi
++
++exec "$JAVACMD" "$@"
+Index: ../AdditionalCourse/app/src/main/res/layout/fragment_dashboard.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/layout/fragment_dashboard.xml	(date 1621430057320)
++++ ../AdditionalCourse/app/src/main/res/layout/fragment_dashboard.xml	(date 1621430057320)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".ui.dashboard.DashboardFragment">
++
++    <TextView
++        android:id="@+id/text_dashboard"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="8dp"
++        android:layout_marginTop="8dp"
++        android:layout_marginEnd="8dp"
++        android:textAlignment="center"
++        android:textSize="20sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: ../AdditionalCourse/gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- ../AdditionalCourse/gradle/wrapper/gradle-wrapper.properties	(date 1621433268889)
++++ ../AdditionalCourse/gradle/wrapper/gradle-wrapper.properties	(date 1621433268889)
+@@ -0,0 +1,6 @@
++#Wed May 19 20:07:48 ALMT 2021
++distributionBase=GRADLE_USER_HOME
++distributionPath=wrapper/dists
++zipStoreBase=GRADLE_USER_HOME
++zipStorePath=wrapper/dists
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1624272217214)
++++ .idea/vcs.xml	(date 1624272217214)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/dashboard/DashboardViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/dashboard/DashboardViewModel.java	(date 1621430056241)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/dashboard/DashboardViewModel.java	(date 1621430056241)
+@@ -0,0 +1,19 @@
++package kg.geektech.additionalcourse.ui.dashboard;
++
++import androidx.lifecycle.LiveData;
++import androidx.lifecycle.MutableLiveData;
++import androidx.lifecycle.ViewModel;
++
++public class DashboardViewModel extends ViewModel {
++
++    private MutableLiveData<String> mText;
++
++    public DashboardViewModel() {
++        mText = new MutableLiveData<>();
++        mText.setValue("This is dashboard fragment");
++    }
++
++    public LiveData<String> getText() {
++        return mText;
++    }
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/gradlew.bat
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/gradlew.bat	(date 1621430050070)
++++ ../AdditionalCourse/gradlew.bat	(date 1621430050070)
+@@ -0,0 +1,84 @@
++@if "%DEBUG%" == "" @echo off
++@rem ##########################################################################
++@rem
++@rem  Gradle startup script for Windows
++@rem
++@rem ##########################################################################
++
++@rem Set local scope for the variables with windows NT shell
++if "%OS%"=="Windows_NT" setlocal
++
++set DIRNAME=%~dp0
++if "%DIRNAME%" == "" set DIRNAME=.
++set APP_BASE_NAME=%~n0
++set APP_HOME=%DIRNAME%
++
++@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++set DEFAULT_JVM_OPTS=
++
++@rem Find java.exe
++if defined JAVA_HOME goto findJavaFromJavaHome
++
++set JAVA_EXE=java.exe
++%JAVA_EXE% -version >NUL 2>&1
++if "%ERRORLEVEL%" == "0" goto init
++
++echo.
++echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:findJavaFromJavaHome
++set JAVA_HOME=%JAVA_HOME:"=%
++set JAVA_EXE=%JAVA_HOME%/bin/java.exe
++
++if exist "%JAVA_EXE%" goto init
++
++echo.
++echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:init
++@rem Get command-line arguments, handling Windows variants
++
++if not "%OS%" == "Windows_NT" goto win9xME_args
++
++:win9xME_args
++@rem Slurp the command line arguments.
++set CMD_LINE_ARGS=
++set _SKIP=2
++
++:win9xME_args_slurp
++if "x%~1" == "x" goto execute
++
++set CMD_LINE_ARGS=%*
++
++:execute
++@rem Setup the command line
++
++set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
++
++@rem Execute Gradle
++"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %CMD_LINE_ARGS%
++
++:end
++@rem End local scope for the variables with windows NT shell
++if "%ERRORLEVEL%"=="0" goto mainEnd
++
++:fail
++rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
++rem the _cmd.exe /c_ return code!
++if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
++exit /b 1
++
++:mainEnd
++if "%OS%"=="Windows_NT" endlocal
++
++:omega
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/dashboard/DashboardFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/dashboard/DashboardFragment.java	(date 1621430057370)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/dashboard/DashboardFragment.java	(date 1621430057370)
+@@ -0,0 +1,35 @@
++package kg.geektech.additionalcourse.ui.dashboard;
++
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.TextView;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.lifecycle.Observer;
++import androidx.lifecycle.ViewModelProvider;
++
++import kg.geektech.additionalcourse.R;
++
++public class DashboardFragment extends Fragment {
++
++    private DashboardViewModel dashboardViewModel;
++
++    public View onCreateView(@NonNull LayoutInflater inflater,
++                             ViewGroup container, Bundle savedInstanceState) {
++        dashboardViewModel =
++                new ViewModelProvider(this).get(DashboardViewModel.class);
++        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
++        final TextView textView = root.findViewById(R.id.text_dashboard);
++        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
++            @Override
++            public void onChanged(@Nullable String s) {
++                textView.setText(s);
++            }
++        });
++        return root;
++    }
++}
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(date 1624272203083)
++++ .idea/.gitignore	(date 1624272203083)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(date 1624442510713)
++++ .idea/gradle.xml	(date 1624442510713)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="testRunner" value="PLATFORM" />
++        <option name="distributionType" value="DEFAULT_WRAPPED" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="1.8" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++        <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/TaskFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/TaskFragment.java	(date 1623746397335)
++++ ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/TaskFragment.java	(date 1623746397335)
+@@ -0,0 +1,80 @@
++package kg.geektech.taskapp31;
++
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.EditText;
++import android.widget.Toast;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.navigation.NavController;
++import androidx.navigation.Navigation;
++
++import com.google.android.gms.tasks.OnCompleteListener;
++import com.google.firebase.firestore.DocumentReference;
++import com.google.firebase.firestore.FirebaseFirestore;
++
++import kg.geektech.taskapp31.models.Task;
++
++public class TaskFragment extends Fragment {
++    private EditText editText;
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        return inflater.inflate(R.layout.fragment_task, container, false);
++    }
++
++    @Override
++    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
++        super.onViewCreated(view, savedInstanceState);
++        editText = view.findViewById(R.id.editText);
++        view.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                save();
++            }
++        });
++
++    }
++
++    private void save() {
++        String text = editText.getText().toString();
++
++        Task task= new Task(text);
++        App.getAppDatabase().taskDao().insert(task);
++
++        saveToFirestore(task);
++
++
++        Bundle bundle = new Bundle();
++        bundle.putString("text", text);
++        getParentFragmentManager().setFragmentResult("rk_task", bundle);
++
++    }
++
++    private void saveToFirestore(Task task) {
++        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
++                firestore.collection("tasks")
++                .add(task)
++                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
++            @Override
++            public void onComplete(@NonNull com.google.android.gms.tasks.Task<DocumentReference> t) {
++                if (t.isSuccessful()){
++                    Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show();
++                    close();
++                }else{
++                    Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show();
++                }
++            }
++        });
++    }
++
++    private void close() {
++        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
++        navController.navigateUp();
++    }
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/layout/fragment_notifications.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/layout/fragment_notifications.xml	(date 1621430057408)
++++ ../AdditionalCourse/app/src/main/res/layout/fragment_notifications.xml	(date 1621430057408)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".ui.notifications.NotificationsFragment">
++
++    <TextView
++        android:id="@+id/text_notifications"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="8dp"
++        android:layout_marginTop="8dp"
++        android:layout_marginEnd="8dp"
++        android:textAlignment="center"
++        android:textSize="20sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/notifications/NotificationsViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/notifications/NotificationsViewModel.java	(date 1621430056363)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/notifications/NotificationsViewModel.java	(date 1621430056363)
+@@ -0,0 +1,19 @@
++package kg.geektech.additionalcourse.ui.notifications;
++
++import androidx.lifecycle.LiveData;
++import androidx.lifecycle.MutableLiveData;
++import androidx.lifecycle.ViewModel;
++
++public class NotificationsViewModel extends ViewModel {
++
++    private MutableLiveData<String> mText;
++
++    public NotificationsViewModel() {
++        mText = new MutableLiveData<>();
++        mText.setValue("This is notifications fragment");
++    }
++
++    public LiveData<String> getText() {
++        return mText;
++    }
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/notifications/NotificationsFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/notifications/NotificationsFragment.java	(date 1621430057459)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/notifications/NotificationsFragment.java	(date 1621430057459)
+@@ -0,0 +1,35 @@
++package kg.geektech.additionalcourse.ui.notifications;
++
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.TextView;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.lifecycle.Observer;
++import androidx.lifecycle.ViewModelProvider;
++
++import kg.geektech.additionalcourse.R;
++
++public class NotificationsFragment extends Fragment {
++
++    private NotificationsViewModel notificationsViewModel;
++
++    public View onCreateView(@NonNull LayoutInflater inflater,
++                             ViewGroup container, Bundle savedInstanceState) {
++        notificationsViewModel =
++                new ViewModelProvider(this).get(NotificationsViewModel.class);
++        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
++        final TextView textView = root.findViewById(R.id.text_notifications);
++        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
++            @Override
++            public void onChanged(@Nullable String s) {
++                textView.setText(s);
++            }
++        });
++        return root;
++    }
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/navigation/mobile_navigation.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/navigation/mobile_navigation.xml	(date 1621435799245)
++++ ../AdditionalCourse/app/src/main/res/navigation/mobile_navigation.xml	(date 1621435799245)
+@@ -0,0 +1,34 @@
++<?xml version="1.0" encoding="utf-8"?>
++<navigation xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/mobile_navigation"
++    app:startDestination="@+id/navigation_home">
++
++    <fragment
++        android:id="@+id/navigation_home"
++        android:name="kg.geektech.additionalcourse.ui.home.HomeFragment"
++        android:label="@string/title_home"
++        tools:layout="@layout/fragment_home" >
++        <action
++            android:id="@+id/action_navigation_home_to_formFragment"
++            app:destination="@id/formFragment" />
++    </fragment>
++
++    <fragment
++        android:id="@+id/navigation_dashboard"
++        android:name="kg.geektech.additionalcourse.ui.dashboard.DashboardFragment"
++        android:label="@string/title_dashboard"
++        tools:layout="@layout/fragment_dashboard" />
++
++    <fragment
++        android:id="@+id/navigation_notifications"
++        android:name="kg.geektech.additionalcourse.ui.notifications.NotificationsFragment"
++        android:label="@string/title_notifications"
++        tools:layout="@layout/fragment_notifications" />
++    <fragment
++        android:id="@+id/formFragment"
++        android:name="kg.geektech.additionalcourse.ui.form.FormFragment"
++        android:label="fragment_form"
++        tools:layout="@layout/fragment_form" />
++</navigation>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/drawable/ic_home_black_24dp.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/drawable/ic_home_black_24dp.xml	(date 1621430057580)
++++ ../AdditionalCourse/app/src/main/res/drawable/ic_home_black_24dp.xml	(date 1621430057580)
+@@ -0,0 +1,9 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24.0"
++    android:viewportHeight="24.0">
++    <path
++        android:fillColor="#FF000000"
++        android:pathData="M10,20v-6h4v6h5v-8h3L12,3 2,12h3v8z" />
++</vector>
+Index: ../AdditionalCourse/app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/build.gradle	(date 1621433528885)
++++ ../AdditionalCourse/app/build.gradle	(date 1621433528885)
+@@ -0,0 +1,47 @@
++plugins {
++    id 'com.android.application'
++}
++
++android {
++    compileSdkVersion 30
++    buildToolsVersion "30.0.3"
++
++    defaultConfig {
++        applicationId "kg.geektech.additionalcourse"
++        minSdkVersion 21
++        targetSdkVersion 30
++        versionCode 1
++        versionName "1.0"
++
++        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
++    }
++
++    buildTypes {
++        release {
++            minifyEnabled false
++            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
++        }
++    }
++    compileOptions {
++        sourceCompatibility JavaVersion.VERSION_1_8
++        targetCompatibility JavaVersion.VERSION_1_8
++    }
++    buildFeatures {
++        viewBinding true
++    }
++}
++
++dependencies {
++
++    implementation 'androidx.appcompat:appcompat:1.2.0'
++    implementation 'com.google.android.material:material:1.3.0'
++    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
++    implementation 'androidx.navigation:navigation-fragment:2.3.5'
++    implementation 'androidx.navigation:navigation-ui:2.3.5'
++    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
++    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
++    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
++    testImplementation 'junit:junit:4.+'
++    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
++    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
++}
+\ No newline at end of file
+Index: ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/ui/home/TaskAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/ui/home/TaskAdapter.java	(date 1621429029537)
++++ ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/ui/home/TaskAdapter.java	(date 1621429029537)
+@@ -0,0 +1,110 @@
++package kg.geektech.taskapp31.ui.home;
++
++import android.app.AlertDialog;
++import android.content.DialogInterface;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.TextView;
++import android.widget.Toast;
++
++import androidx.annotation.NonNull;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.ArrayList;
++
++import kg.geektech.taskapp31.R;
++import kg.geektech.taskapp31.models.Task;
++
++public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> implements View.OnClickListener {
++
++    private ArrayList<Task> list = new ArrayList<>();
++
++    @NonNull
++    @Override
++    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_task, parent, false);
++        return new ViewHolder(view);
++    }
++
++
++    @Override
++    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
++        holder.bind(list.get(position));
++
++        if (position % 2 == 0) {
++            holder.itemView.setBackgroundResource(R.color.color_light);
++        } else {
++            holder.itemView.setBackgroundResource(R.color.color_dark);
++        }
++
++        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
++            @Override
++            public boolean onLongClick(View view) {
++                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
++                builder.setTitle("DO YOU WANT TO Delete item?");
++                builder.setMessage("Press OK if you want to delete, press CANCEL if not");
++                builder.setCancelable(true);
++                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
++                    @Override
++                    public void onClick(DialogInterface dialog, int which) {
++                        list.remove(position);
++                        notifyDataSetChanged();
++                    }
++                });
++                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
++                    @Override
++                    public void onClick(DialogInterface dialog, int which) {
++
++                    }
++                });
++                builder.show();
++                return false;
++            }
++
++        });
++    }
++
++    @Override
++    public int getItemCount() {
++        return list.size();
++    }
++
++    public void addItem(Task task) {
++        list.add(task);
++        notifyItemInserted(list.indexOf(task));
++    }
++
++    @Override
++    public void onClick(View v) {
++
++    }
++
++
++    public class ViewHolder extends RecyclerView.ViewHolder {
++
++        private TextView textTitle;
++
++        public ViewHolder(@NonNull View itemView) {
++            super(itemView);
++            itemView.setOnClickListener(new View.OnClickListener() {
++                @Override
++                public void onClick(View view) {
++
++                    Toast toast = Toast.makeText(view.getContext(), String.valueOf(getAdapterPosition()) + ":" + textTitle.getText(), Toast.LENGTH_SHORT);
++                   // toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.START, 90, 0);
++                    toast.show();
++
++                }
++
++            });
++            textTitle = itemView.findViewById(R.id.textTitle);
++        }
++
++        public void bind(Task task) {
++            textTitle.setText(task.getTitle());
++        }
++
++
++    }
++}
+Index: ../AdditionalCourse/app/src/main/res/drawable/ic_dashboard_black_24dp.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/drawable/ic_dashboard_black_24dp.xml	(date 1621430057536)
++++ ../AdditionalCourse/app/src/main/res/drawable/ic_dashboard_black_24dp.xml	(date 1621430057536)
+@@ -0,0 +1,9 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24.0"
++    android:viewportHeight="24.0">
++    <path
++        android:fillColor="#FF000000"
++        android:pathData="M3,13h8L11,3L3,3v10zM3,21h8v-6L3,15v6zM13,21h8L21,11h-8v10zM13,3v6h8L21,3h-8z" />
++</vector>
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/MainActivity.java	(date 1621430057647)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/MainActivity.java	(date 1621430057647)
+@@ -0,0 +1,30 @@
++package kg.geektech.additionalcourse;
++
++import android.os.Bundle;
++
++import com.google.android.material.bottomnavigation.BottomNavigationView;
++
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.navigation.NavController;
++import androidx.navigation.Navigation;
++import androidx.navigation.ui.AppBarConfiguration;
++import androidx.navigation.ui.NavigationUI;
++
++public class MainActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++        BottomNavigationView navView = findViewById(R.id.nav_view);
++        // Passing each menu ID as a set of Ids because each
++        // menu should be considered as top level destinations.
++        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
++                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
++                .build();
++        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
++        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
++        NavigationUI.setupWithNavController(navView, navController);
++    }
++
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/app/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/.gitignore	(date 1621430051106)
++++ ../AdditionalCourse/app/.gitignore	(date 1621430051106)
+@@ -0,0 +1,1 @@
++/build
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1624272254807)
++++ .idea/compiler.xml	(date 1624272254807)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="1.8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/drawable/ic_notifications_black_24dp.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/drawable/ic_notifications_black_24dp.xml	(date 1621430057613)
++++ ../AdditionalCourse/app/src/main/res/drawable/ic_notifications_black_24dp.xml	(date 1621430057613)
+@@ -0,0 +1,9 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24.0"
++    android:viewportHeight="24.0">
++    <path
++        android:fillColor="#FF000000"
++        android:pathData="M12,22c1.1,0 2,-0.9 2,-2h-4c0,1.1 0.89,2 2,2zM18,16v-5c0,-3.07 -1.64,-5.64 -4.5,-6.32L13.5,4c0,-0.83 -0.67,-1.5 -1.5,-1.5s-1.5,0.67 -1.5,1.5v0.68C7.63,5.36 6,7.92 6,11v5l-2,2v1h16v-1l-2,-2z" />
++</vector>
+Index: ../AdditionalCourse/app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/AndroidManifest.xml	(date 1621430057195)
++++ ../AdditionalCourse/app/src/main/AndroidManifest.xml	(date 1621430057195)
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="kg.geektech.additionalcourse">
++
++    <application
++        android:allowBackup="true"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.AdditionalCourse">
++        <activity
++            android:name=".MainActivity"
++            android:label="@string/app_name">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/values/dimens.xml	(date 1621430056905)
++++ ../AdditionalCourse/app/src/main/res/values/dimens.xml	(date 1621430056905)
+@@ -0,0 +1,5 @@
++<resources>
++    <!-- Default screen margins, per the Android Design guidelines. -->
++    <dimen name="activity_horizontal_margin">16dp</dimen>
++    <dimen name="activity_vertical_margin">16dp</dimen>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_baseline_perm_media_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_baseline_perm_media_24.xml	(date 1624546173206)
++++ app/src/main/res/drawable/ic_baseline_perm_media_24.xml	(date 1624546173206)
+@@ -0,0 +1,5 @@
++<vector android:alpha="0.9" android:height="24dp" android:tint="#FFC818"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M2,6L0,6v5h0.01L0,20c0,1.1 0.9,2 2,2h18v-2L2,20L2,6zM22,4h-8l-2,-2L6,2c-1.1,0 -1.99,0.9 -1.99,2L4,16c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2L24,6c0,-1.1 -0.9,-2 -2,-2zM7,15l4.5,-6 3.5,4.51 2.5,-3.01L21,15L7,15z"/>
++</vector>
+Index: ../AdditionalCourse/app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/layout/activity_main.xml	(date 1621435482471)
++++ ../AdditionalCourse/app/src/main/res/layout/activity_main.xml	(date 1621435482471)
+@@ -0,0 +1,36 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:id="@+id/container"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++   >
++
++    <com.google.android.material.bottomnavigation.BottomNavigationView
++        android:id="@+id/nav_view"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="0dp"
++        android:layout_marginEnd="0dp"
++        android:background="?android:attr/windowBackground"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintLeft_toLeftOf="parent"
++        app:layout_constraintRight_toRightOf="parent"
++        app:menu="@menu/bottom_nav_menu" />
++
++    <fragment
++        android:id="@+id/nav_host_fragment"
++        android:name="androidx.navigation.fragment.NavHostFragment"
++        android:layout_width="match_parent"
++        android:layout_height="0dp"
++        app:defaultNavHost="true"
++        app:layout_constraintBottom_toTopOf="@id/nav_view"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintLeft_toLeftOf="parent"
++        app:layout_constraintRight_toRightOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.0"
++        app:navGraph="@navigation/mobile_navigation" />
++
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/menu/bottom_nav_menu.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/menu/bottom_nav_menu.xml	(date 1621430057725)
++++ ../AdditionalCourse/app/src/main/res/menu/bottom_nav_menu.xml	(date 1621430057725)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<menu xmlns:android="http://schemas.android.com/apk/res/android">
++
++    <item
++        android:id="@+id/navigation_home"
++        android:icon="@drawable/ic_home_black_24dp"
++        android:title="@string/title_home" />
++
++    <item
++        android:id="@+id/navigation_dashboard"
++        android:icon="@drawable/ic_dashboard_black_24dp"
++        android:title="@string/title_dashboard" />
++
++    <item
++        android:id="@+id/navigation_notifications"
++        android:icon="@drawable/ic_notifications_black_24dp"
++        android:title="@string/title_notifications" />
++
++</menu>
+\ No newline at end of file
+Index: ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/models/Task.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/models/Task.java	(date 1623745411316)
++++ ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/models/Task.java	(date 1623745411316)
+@@ -0,0 +1,40 @@
++package kg.geektech.taskapp31.models;
++
++import androidx.room.Entity;
++import androidx.room.PrimaryKey;
++
++import java.io.Serializable;
++
++@Entity
++public class Task implements Serializable {
++
++    @PrimaryKey(autoGenerate = true)
++    private long id;
++    private String title;
++
++
++    public Task(){
++
++    }
++
++    public Task(String title) {
++        this.title = title;
++    }
++
++    public long getId() {
++        return id;
++    }
++
++    public void setId(long id) {
++        this.id = id;
++    }
++
++    public String getTitle() {
++        return title;
++    }
++
++    public void setTitle(String title) {
++        this.title = title;
++    }
++
++}
+Index: ../AdditionalCourse/app/src/androidTest/java/kg/geektech/additionalcourse/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/androidTest/java/kg/geektech/additionalcourse/ExampleInstrumentedTest.java	(date 1621430054759)
++++ ../AdditionalCourse/app/src/androidTest/java/kg/geektech/additionalcourse/ExampleInstrumentedTest.java	(date 1621430054759)
+@@ -0,0 +1,26 @@
++package kg.geektech.additionalcourse;
++
++import android.content.Context;
++
++import androidx.test.platform.app.InstrumentationRegistry;
++import androidx.test.ext.junit.runners.AndroidJUnit4;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static org.junit.Assert.*;
++
++/**
++ * Instrumented test, which will execute on an Android device.
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++@RunWith(AndroidJUnit4.class)
++public class ExampleInstrumentedTest {
++    @Test
++    public void useAppContext() {
++        // Context of the app under test.
++        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
++        assertEquals("kg.geektech.additionalcourse", appContext.getPackageName());
++    }
++}
+\ No newline at end of file
+Index: ../TaskApp31/app/src/main/java/profile/ProfileFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/java/profile/ProfileFragment.java	(date 1624540720607)
++++ ../TaskApp31/app/src/main/java/profile/ProfileFragment.java	(date 1624540720607)
+@@ -0,0 +1,47 @@
++package profile;
++
++import android.net.Uri;
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.ImageView;
++
++import androidx.activity.result.ActivityResultCallback;
++import androidx.activity.result.ActivityResultLauncher;
++import androidx.activity.result.contract.ActivityResultContracts;
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++
++import kg.geektech.taskapp31.R;
++
++public class ProfileFragment extends Fragment {
++    private ImageView openGallery;
++
++    ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
++            new ActivityResultCallback<Uri>() {
++                @Override
++                public void onActivityResult(Uri uri) {
++                   openGallery.setImageURI(uri);
++                }
++            });
++
++     public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        return inflater.inflate(R.layout.fragment_profile, container, false);
++    }
++
++    @Override
++    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
++        super.onViewCreated(view, savedInstanceState);
++        openGallery = view.findViewById(R.id.img1);
++        openGallery.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                mGetContent.launch("image/*");
++                };
++        });
++
++    }
++}
+Index: ../TaskApp31/app/src/main/java/profile/ProfileViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/java/profile/ProfileViewModel.java	(date 1620827306792)
++++ ../TaskApp31/app/src/main/java/profile/ProfileViewModel.java	(date 1620827306792)
+@@ -0,0 +1,20 @@
++package profile;
++
++import androidx.lifecycle.LiveData;
++import androidx.lifecycle.MutableLiveData;
++import androidx.lifecycle.ViewModel;
++
++public class ProfileViewModel extends ViewModel {
++
++    private MutableLiveData<String> mText;
++
++    public ProfileViewModel() {
++        mText = new MutableLiveData<>();
++        mText.setValue("This is profile fragment");
++    }
++
++    public LiveData<String> getText() {
++        return mText;
++    }
++}
++
+Index: ../AdditionalCourse/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/.idea/vcs.xml	(date 1621430063536)
++++ ../AdditionalCourse/.idea/vcs.xml	(date 1621430063536)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/.idea/misc.xml	(date 1621430101605)
++++ ../AdditionalCourse/.idea/misc.xml	(date 1621430101605)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/home_adapter/HomeAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/home_adapter/HomeAdapter.java	(date 1621438059845)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/home/home_adapter/HomeAdapter.java	(date 1621438059845)
+@@ -0,0 +1,60 @@
++package kg.geektech.additionalcourse.ui.home.home_adapter;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.Toast;
++
++import androidx.annotation.NonNull;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.ArrayList;
++import java.util.List;
++
++import kg.geektech.additionalcourse.databinding.ItemRvBinding;
++import kg.geektech.additionalcourse.ui.home.HomeModel;
++
++public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
++
++    private List<HomeModel> list = new ArrayList<>();
++
++    @NonNull
++    @Override
++    public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++        return new HomeViewHolder(ItemRvBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
++    }
++
++    @Override
++    public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
++        holder.onBind(list.get(position));
++
++    }
++
++    @Override
++    public int getItemCount() {
++        return list.size();
++    }
++
++    public void addElem(HomeModel homeModel){
++        list.add(homeModel);
++        notifyDataSetChanged();
++    }
++
++    class HomeViewHolder extends  RecyclerView.ViewHolder {
++
++        private ItemRvBinding binding;
++
++        public HomeViewHolder(@NonNull ItemRvBinding itemView) {
++            super(itemView.getRoot());
++            binding = itemView;
++        }
++
++        public void onBind(HomeModel homeModel) {
++            binding.titleTV.setText(homeModel.getTitle());
++            binding.descTV.setText(homeModel.getDesc());
++            binding.getRoot().setOnClickListener(v -> {
++                Toast.makeText(binding.getRoot().getContext(), homeModel.getTitle()+ homeModel.getDesc(), Toast.LENGTH_SHORT).show();
++            });
++        }
++    }
++}
+Index: ../AdditionalCourse/.idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/.idea/gradle.xml	(date 1621430101651)
++++ ../AdditionalCourse/.idea/gradle.xml	(date 1621430101651)
+@@ -0,0 +1,21 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="testRunner" value="PLATFORM" />
++        <option name="distributionType" value="DEFAULT_WRAPPED" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="1.8" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++        <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/test/java/kg/geektech/additionalcourse/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/test/java/kg/geektech/additionalcourse/ExampleUnitTest.java	(date 1621430054824)
++++ ../AdditionalCourse/app/src/test/java/kg/geektech/additionalcourse/ExampleUnitTest.java	(date 1621430054824)
+@@ -0,0 +1,17 @@
++package kg.geektech.additionalcourse;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/kg/geektech/todoapp32/ui/home/TaskAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kg/geektech/todoapp32/ui/home/TaskAdapter.java	(date 1624542183364)
++++ app/src/main/java/kg/geektech/todoapp32/ui/home/TaskAdapter.java	(date 1624542183364)
+@@ -0,0 +1,61 @@
++package kg.geektech.todoapp32.ui.home;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.TextView;
++
++import androidx.annotation.NonNull;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.ArrayList;
++
++import kg.geektech.todoapp32.R;
++import kg.geektech.todoapp32.models.Task;
++
++public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> implements View.OnClickListener {
++
++    private ArrayList<Task> list = new ArrayList<>();
++    @NonNull
++    @Override
++    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_todo, parent, false);
++        return new ViewHolder(view);
++    }
++
++    @Override
++    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
++        holder.bind(list.get(position));
++       
++    }
++
++    @Override
++    public int getItemCount() {
++        return list.size();
++    }
++
++    public void addItem(Task task){
++        list.add(0, task);
++        notifyItemInserted(list.indexOf(task));
++    }
++
++    @Override
++    public void onClick(View v) {
++
++    }
++
++
++    public class ViewHolder extends RecyclerView.ViewHolder {
++        private TextView textTitle;
++
++
++        public ViewHolder(@NonNull View itemView) {
++            super(itemView);
++            textTitle = itemView.findViewById(R.id.textTitle);
++        }
++
++        public void bind(Task task) {
++            textTitle.setText(task.getTitle());
++        }
++    }
++}
+Index: ../AdditionalCourse/app/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/proguard-rules.pro	(date 1621430051376)
++++ ../AdditionalCourse/app/proguard-rules.pro	(date 1621430051376)
+@@ -0,0 +1,21 @@
++# Add project specific ProGuard rules here.
++# You can control the set of applied configuration files using the
++# proguardFiles setting in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
++
++# Uncomment this to preserve the line number information for
++# debugging stack traces.
++#-keepattributes SourceFile,LineNumberTable
++
++# If you keep the line number information, uncomment this to
++# hide the original source file name.
++#-renamesourcefileattribute SourceFile
+\ No newline at end of file
+Index: ../AdditionalCourse/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/.idea/.gitignore	(date 1621430071605)
++++ ../AdditionalCourse/.idea/.gitignore	(date 1621430071605)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: app/src/main/res/layout/item_todo.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/item_todo.xml	(date 1624444174070)
++++ app/src/main/res/layout/item_todo.xml	(date 1624444174070)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:padding="16dp"
++    android:layout_margin="2dp">
++    <TextView
++        android:id="@+id/textTitle"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Title"
++        android:textSize="16sp"
++        />
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/kg/geektech/todoapp32/models/Task.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kg/geektech/todoapp32/models/Task.java	(date 1624445676813)
++++ app/src/main/java/kg/geektech/todoapp32/models/Task.java	(date 1624445676813)
+@@ -0,0 +1,19 @@
++package kg.geektech.todoapp32.models;
++
++import java.io.Serializable;
++
++public class Task implements Serializable {
++    private String title;
++
++    public Task(String title) {
++        this.title = title;
++    }
++
++    public String getTitle() {
++        return title;
++    }
++
++    public void setTitle(String title) {
++        this.title = title;
++    }
++}
+Index: ../AdditionalCourse/app/src/main/res/layout/item_rv.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/layout/item_rv.xml	(date 1621435482462)
++++ ../AdditionalCourse/app/src/main/res/layout/item_rv.xml	(date 1621435482462)
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:layout_margin="20dp"
++    xmlns:app="http://schemas.android.com/apk/res-auto">
++
++    <TextView
++        android:id="@+id/titleTV"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:textSize="25sp"
++        android:text="Title"
++        app:layout_constraintTop_toTopOf="parent"/>
++    <TextView
++        android:id="@+id/descTV"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:textSize="25sp"
++        android:text="Description"
++        app:layout_constraintTop_toBottomOf="@id/titleTV"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/jarRepositories.xml	(date 1624272332474)
++++ .idea/jarRepositories.xml	(date 1624272332474)
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="BintrayJCenter" />
++      <option name="name" value="BintrayJCenter" />
++      <option name="url" value="https://jcenter.bintray.com/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="Google" />
++      <option name="name" value="Google" />
++      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/layout/fragment_form.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/layout/fragment_form.xml	(date 1621435482427)
++++ ../AdditionalCourse/app/src/main/res/layout/fragment_form.xml	(date 1621435482427)
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context=".ui.form.FormFragment">
++
++ <EditText
++     android:layout_width="match_parent"
++     android:layout_height="wrap_content"
++     android:id="@+id/titleET"
++     android:textSize="24sp"
++     android:textColor="@color/black"
++     android:hint="Title"/>
++
++    <EditText
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:id="@+id/descET"
++        android:textSize="24sp"
++        android:textColor="@color/black"
++        android:hint="Description"/>
++    <Button
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="save"/>
++
++</LinearLayout>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/form/FormFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/form/FormFragment.java	(date 1621435482481)
++++ ../AdditionalCourse/app/src/main/java/kg/geektech/additionalcourse/ui/form/FormFragment.java	(date 1621435482481)
+@@ -0,0 +1,21 @@
++package kg.geektech.additionalcourse.ui.form;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++import kg.geektech.additionalcourse.R;
++
++public class FormFragment extends Fragment {
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_form, container, false);
++    }
++}
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1621430054868)
++++ ../AdditionalCourse/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1621430054868)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/drawable/ic_launcher_background.xml	(date 1621430055447)
++++ ../AdditionalCourse/app/src/main/res/drawable/ic_launcher_background.xml	(date 1621430055447)
+@@ -0,0 +1,170 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path
++        android:fillColor="#3DDC84"
++        android:pathData="M0,0h108v108h-108z" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M9,0L9,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,0L19,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,0L29,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,0L39,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,0L49,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,0L59,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,0L69,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,0L79,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M89,0L89,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M99,0L99,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,9L108,9"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,19L108,19"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,29L108,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,39L108,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,49L108,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,59L108,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,69L108,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,79L108,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,89L108,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,99L108,99"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,29L89,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,39L89,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,49L89,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,59L89,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,69L89,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,79L89,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,19L29,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,19L39,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,19L49,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,19L59,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,19L69,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,19L79,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++</vector>
+Index: ../AdditionalCourse/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1621430055587)
++++ ../AdditionalCourse/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1621430055587)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/java/kg/geektech/todoapp32/profile/ProfileFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kg/geektech/todoapp32/profile/ProfileFragment.java	(date 1624544015761)
++++ app/src/main/java/kg/geektech/todoapp32/profile/ProfileFragment.java	(date 1624544015761)
+@@ -0,0 +1,47 @@
++package kg.geektech.todoapp32.profile;
++
++import android.net.Uri;
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.ImageView;
++
++import androidx.activity.result.ActivityResultCallback;
++import androidx.activity.result.ActivityResultLauncher;
++import androidx.activity.result.contract.ActivityResultContracts;
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import kg.geektech.todoapp32.R;
++
++
++public class ProfileFragment extends Fragment {
++    private ImageView openGallery;
++
++    ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
++            new ActivityResultCallback<Uri>() {
++                @Override
++                public void onActivityResult(Uri uri) {
++                    openGallery.setImageURI(uri);
++                }
++            });
++
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        return inflater.inflate(R.layout.fragment_profile, container, false);
++    }
++
++    @Override
++    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
++        super.onViewCreated(view, savedInstanceState);
++        openGallery = view.findViewById(R.id.profileImage);
++        openGallery.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                mGetContent.launch("image/*");
++            };
++        });
++
++    }
++}
+Index: ../AdditionalCourse/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(date 1621430055490)
++++ ../AdditionalCourse/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(date 1621430055490)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/values/strings.xml	(date 1621433528959)
++++ ../AdditionalCourse/app/src/main/res/values/strings.xml	(date 1621433528959)
+@@ -0,0 +1,8 @@
++<resources>
++    <string name="app_name">AdditionalCourse</string>
++    <string name="title_home">Home</string>
++    <string name="title_dashboard">Dashboard</string>
++    <string name="title_notifications">Notifications</string>
++    <!-- TODO: Remove or change this placeholder text -->
++    <string name="hello_blank_fragment">Hello blank fragment</string>
++</resources>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/values/colors.xml	(date 1621430055842)
++++ ../AdditionalCourse/app/src/main/res/values/colors.xml	(date 1621430055842)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="purple_200">#FFBB86FC</color>
++    <color name="purple_500">#FF6200EE</color>
++    <color name="purple_700">#FF3700B3</color>
++    <color name="teal_200">#FF03DAC5</color>
++    <color name="teal_700">#FF018786</color>
++    <color name="black">#FF000000</color>
++    <color name="white">#FFFFFFFF</color>
++</resources>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/values/themes.xml	(date 1621430055767)
++++ ../AdditionalCourse/app/src/main/res/values/themes.xml	(date 1621430055767)
+@@ -0,0 +1,16 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.AdditionalCourse" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
++        <!-- Primary brand color. -->
++        <item name="colorPrimary">@color/purple_500</item>
++        <item name="colorPrimaryVariant">@color/purple_700</item>
++        <item name="colorOnPrimary">@color/white</item>
++        <!-- Secondary brand color. -->
++        <item name="colorSecondary">@color/teal_200</item>
++        <item name="colorSecondaryVariant">@color/teal_700</item>
++        <item name="colorOnSecondary">@color/black</item>
++        <!-- Status bar color. -->
++        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
++        <!-- Customize your theme here. -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: ../AdditionalCourse/app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/app/src/main/res/values-night/themes.xml	(date 1621430055894)
++++ ../AdditionalCourse/app/src/main/res/values-night/themes.xml	(date 1621430055894)
+@@ -0,0 +1,16 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.AdditionalCourse" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
++        <!-- Primary brand color. -->
++        <item name="colorPrimary">@color/purple_200</item>
++        <item name="colorPrimaryVariant">@color/purple_700</item>
++        <item name="colorOnPrimary">@color/black</item>
++        <!-- Secondary brand color. -->
++        <item name="colorSecondary">@color/teal_200</item>
++        <item name="colorSecondaryVariant">@color/teal_200</item>
++        <item name="colorOnSecondary">@color/black</item>
++        <!-- Status bar color. -->
++        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
++        <!-- Customize your theme here. -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: ../AdditionalCourse/.idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/.idea/jarRepositories.xml	(date 1621431449468)
++++ ../AdditionalCourse/.idea/jarRepositories.xml	(date 1621431449468)
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="BintrayJCenter" />
++      <option name="name" value="BintrayJCenter" />
++      <option name="url" value="https://jcenter.bintray.com/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="Google" />
++      <option name="name" value="Google" />
++      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_form.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_form.xml	(date 1624446797635)
++++ app/src/main/res/layout/fragment_form.xml	(date 1624446797635)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    android:padding="16dp"
++    tools:context=".FormFragment">
++
++    <EditText
++        android:id="@+id/editText"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:hint="Enter smth"/>
++    <Button
++        android:id="@+id/btnSave"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="16dp"
++        android:text="Save"/>
++
++</LinearLayout>
+\ No newline at end of file
+Index: ../AdditionalCourse/.idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../AdditionalCourse/.idea/compiler.xml	(date 1621430101638)
++++ ../AdditionalCourse/.idea/compiler.xml	(date 1621430101638)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="1.8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_profile.xml	(date 1624546239600)
++++ app/src/main/res/layout/fragment_profile.xml	(date 1624546239600)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".profile.ProfileFragment">
++
++    <ImageView
++        android:id="@+id/profileImage"
++        android:layout_width="150dp"
++        android:layout_height="150dp"
++        android:layout_margin="120dp"
++        android:src="@drawable/ic_baseline_perm_media_24"
++        />
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_add.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_add.xml	(date 1624273170578)
++++ app/src/main/res/drawable/ic_add.xml	(date 1624273170578)
+@@ -0,0 +1,5 @@
++<vector android:alpha="0.9" android:height="24dp" android:tint="#FFFFFF"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
++</vector>
+Index: app/src/main/java/kg/geektech/todoapp32/FormFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kg/geektech/todoapp32/FormFragment.java	(date 1624275950924)
++++ app/src/main/java/kg/geektech/todoapp32/FormFragment.java	(date 1624275950924)
+@@ -0,0 +1,50 @@
++package kg.geektech.todoapp32;
++
++import android.os.Bundle;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.navigation.NavController;
++import androidx.navigation.Navigation;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.EditText;
++
++public class FormFragment extends Fragment {
++    private EditText editText;
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        return inflater.inflate(R.layout.fragment_form, container, false);
++    }
++
++    @Override
++    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
++        super.onViewCreated(view, savedInstanceState);
++        editText = view.findViewById(R.id.editText);
++        view.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++              save();
++            }
++        });
++    }
++
++    private void save() {
++        String text = editText.getText().toString();
++        Bundle bundle = new Bundle();
++        bundle.putString("text", text);
++        getParentFragmentManager().setFragmentResult("rk_form", bundle);
++        close();
++
++    }
++
++    private void close() {
++        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
++        navController.navigateUp();
++    }
++}
+\ No newline at end of file
+Index: ../TaskApp31/app/src/main/res/layout/fragment_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/res/layout/fragment_profile.xml	(date 1622206831680)
++++ ../TaskApp31/app/src/main/res/layout/fragment_profile.xml	(date 1622206831680)
+@@ -0,0 +1,48 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context="profile.ProfileFragment">
++
++    <ImageView
++        android:id="@+id/img1"
++        style="@style/CircularShape"
++        android:layout_width="150dp"
++        android:layout_height="150dp"
++        android:layout_margin="120dp"
++        android:background="@color/gray" />
++
++    <EditText
++        android:id="@+id/username"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_below="@+id/img1"
++        android:text="Username"
++        android:textSize="20sp" />
++
++    <EditText
++        android:id="@+id/email"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/username"
++        android:text="Email"
++        android:textSize="20sp" />
++
++    <EditText
++        android:id="@+id/phone"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/email"
++        android:text="Phone"
++        android:textSize="20sp" />
++
++    <EditText
++        android:id="@+id/dateob"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/phone"
++        android:text="Date of birth"
++        android:textSize="20sp" />
++</RelativeLayout>
+\ No newline at end of file
+Index: ../TaskApp31/app/src/main/res/layout/fragment_task.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/res/layout/fragment_task.xml	(date 1621955250495)
++++ ../TaskApp31/app/src/main/res/layout/fragment_task.xml	(date 1621955250495)
+@@ -0,0 +1,24 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    android:padding="16dp"
++    tools:context=".TaskFragment">
++
++    <EditText
++        android:background="@drawable/bg_edit"
++        android:id="@+id/editText"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:hint="Введите задачку"/>
++
++    <Button
++        android:id="@+id/btnSave"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="Save"
++       />
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_baseline_people_alt_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_baseline_people_alt_24.xml	(date 1624544716630)
++++ app/src/main/res/drawable/ic_baseline_people_alt_24.xml	(date 1624544716630)
+@@ -0,0 +1,15 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:height="24dp"
++    android:viewportHeight="24"
++    android:viewportWidth="24"
++    android:width="24dp"
++    >
++    <path android:fillColor="@color/black"
++        android:fillType="evenOdd" android:pathData="M16.67,13.13C18.04,14.06 19,15.32 19,17v3h4v-3C23,14.82 19.43,13.53 16.67,13.13z"/>
++    <path android:fillColor="@android:color/black"
++        android:fillType="evenOdd" android:pathData="M9,8m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
++    <path android:fillColor="@android:color/black"
++        android:fillType="evenOdd" android:pathData="M15,12c2.21,0 4,-1.79 4,-4c0,-2.21 -1.79,-4 -4,-4c-0.47,0 -0.91,0.1 -1.33,0.24C14.5,5.27 15,6.58 15,8s-0.5,2.73 -1.33,3.76C14.09,11.9 14.53,12 15,12z"/>
++    <path android:fillColor="@android:color/black"
++        android:fillType="evenOdd" android:pathData="M9,13c-2.67,0 -8,1.34 -8,4v3h16v-3C17,14.34 11.67,13 9,13z"/>
++</vector>
+Index: ../TaskApp31/app/src/main/res/layout/list_task.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/res/layout/list_task.xml	(date 1621277421550)
++++ ../TaskApp31/app/src/main/res/layout/list_task.xml	(date 1621277421550)
+@@ -0,0 +1,21 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:padding="16dp"
++    android:layout_margin="2dp"
++   >
++
++
++    <TextView
++        android:id="@+id/textTitle"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Title"
++        android:textSize="16sp"
++        />
++
++
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/kg/geektech/todoapp32/profile/ProfileViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kg/geektech/todoapp32/profile/ProfileViewModel.java	(date 1624539628815)
++++ app/src/main/java/kg/geektech/todoapp32/profile/ProfileViewModel.java	(date 1624539628815)
+@@ -0,0 +1,18 @@
++package kg.geektech.todoapp32.profile;
++
++import androidx.lifecycle.LiveData;
++import androidx.lifecycle.MutableLiveData;
++import androidx.lifecycle.ViewModel;
++
++public class ProfileViewModel extends ViewModel {
++    private MutableLiveData<String> mText;
++
++    public ProfileViewModel() {
++        mText = new MutableLiveData<>();
++        mText.setValue("This is profile fragment");
++    }
++
++    public LiveData<String> getText() {
++        return mText;
++    }
++}
+Index: ../TaskApp31/app/src/main/res/drawable/ic_add.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/res/drawable/ic_add.xml	(date 1620742596292)
++++ ../TaskApp31/app/src/main/res/drawable/ic_add.xml	(date 1620742596292)
+@@ -0,0 +1,5 @@
++<vector android:height="24dp" android:tint="#FFFFFF"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
++</vector>
+Index: ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/interfaces/OnItemClickListener.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/interfaces/OnItemClickListener.java	(date 1622701394750)
++++ ../TaskApp31/app/src/main/java/kg/geektech/taskapp31/interfaces/OnItemClickListener.java	(date 1622701394750)
+@@ -0,0 +1,6 @@
++package kg.geektech.taskapp31.interfaces;
++
++public interface OnItemClickListener {
++
++    void onClickStart();
++}
+Index: ../TaskApp31/app/src/main/res/drawable/ic_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../TaskApp31/app/src/main/res/drawable/ic_profile.xml	(date 1620822291359)
++++ ../TaskApp31/app/src/main/res/drawable/ic_profile.xml	(date 1620822291359)
+@@ -0,0 +1,23 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:tint="#000000"
++    android:viewportWidth="24"
++    android:viewportHeight="24">
++    <path
++        android:fillColor="@color/black"
++        android:fillType="evenOdd"
++        android:pathData="M16.67,13.13C18.04,14.06 19,15.32 19,17v3h4v-3C23,14.82 19.43,13.53 16.67,13.13z" />
++    <path
++        android:fillColor="@android:color/white"
++        android:fillType="evenOdd"
++        android:pathData="M9,8m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
++    <path
++        android:fillColor="@android:color/white"
++        android:fillType="evenOdd"
++        android:pathData="M15,12c2.21,0 4,-1.79 4,-4c0,-2.21 -1.79,-4 -4,-4c-0.47,0 -0.91,0.1 -1.33,0.24C14.5,5.27 15,6.58 15,8s-0.5,2.73 -1.33,3.76C14.09,11.9 14.53,12 15,12z" />
++    <path
++        android:fillColor="@android:color/white"
++        android:fillType="evenOdd"
++        android:pathData="M9,13c-2.67,0 -8,1.34 -8,4v3h16v-3C17,14.34 11.67,13 9,13z" />
++</vector>
